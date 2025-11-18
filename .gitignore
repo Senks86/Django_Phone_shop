@@ -1,0 +1,34 @@
+# Python / bytecode
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# SQLite (будь-де)
+**/db.sqlite3
+
+# Venv
+.venv/
+venv/
+.env/
+
+# Env files (секрети)
+.env
+*.env
+
+# Django статика/медіа (за потреби)
+static/
+staticfiles/
+media/
+*.log
+
+# IDE / ОС
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Тести/coverage
+.pytest_cache/
+.coverage
+htmlcov/
