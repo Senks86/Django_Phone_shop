@@ -1,16 +1,21 @@
 from django.db import models
-
+from django.utils.text import slugify
 class Product(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=150)
+    slug = models.SlugField(unique=True, blank=True)
     description = models.TextField()# null = True
     price = models.DecimalField(max_digits=8, decimal_places=2)
     color = models.CharField(max_length=10)
     created_at = models.DateTimeField(auto_now_add=True)
     brand = models.CharField(max_length=20)
     dev_country = models.CharField(max_length=20)
-    #image = models.ImageField(upload_to="products/", null=True)
+    image = models.ImageField(upload_to="products/", null=True)
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 def __str__(self):
     return f"{self.brand} {self.name}"
 

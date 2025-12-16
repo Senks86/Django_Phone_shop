@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Home{% endblock %}
 
 {% block slider_section %}
@@ -12,13 +12,15 @@
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Fast Food Restaurant
+                      Phone shop
                     </h1>
-                    <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
-                    </p>
+                    <h2>Apple</h2>
+                    <h5>Apple is a global symbol of innovation, style, and premium quality.
+                      The brand's products—from iPhone and MacBook to Apple Watch and iPad—combine
+                      powerful technology, thoughtful design, and a user-friendly ecosystem.
+                      People choose Apple for its reliability, simplicity, and premium status.</h5>
                     <div class="btn-box">
-                      <a href="" class="btn1">
+                      <a href="{% url 'shop' %}" class="btn1">
                         Order Now
                       </a>
                     </div>
@@ -33,13 +35,14 @@
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Fast Food Restaurant
+                      Phone shop
                     </h1>
-                    <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
-                    </p>
+                    <h2>Xiaomi</h2>
+                    <h5>Xiaomi offers innovative devices at an affordable price.
+                      Xiaomi smartphones, smart gadgets, and appliances combine technology, modern design, and excellent value for money.</h5>
+
                     <div class="btn-box">
-                      <a href="" class="btn1">
+                      <a href="{% url 'shop' %}" class="btn1">
                         Order Now
                       </a>
                     </div>
@@ -54,13 +57,14 @@
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Fast Food Restaurant
+                      Phone shop
                     </h1>
-                    <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
-                    </p>
+                    <h2>Samsung</h2>
+                    <h5>Samsung is a global technology leader.
+                      Its smartphones, televisions, and home appliances combine innovation, style, and reliability.
+                      Millions of people worldwide trust the brand for its quality, convenience, and continuous innovation.</h5>
                     <div class="btn-box">
-                      <a href="" class="btn1">
+                      <a href="{% url 'shop' %}" class="btn1">
                         Order Now
                       </a>
                     </div>
@@ -83,19 +87,62 @@
 {% endblock %}
 
 {% block content %}
-    <h1>
-        Home page
-    </h1>
-    <div class="product-list">
-        {% for product in products %}
-        <div class="product">
-            <h3>{{ product.brand }} {{ product.name }}</h3>
-            <p>{{ product.description }}</p>
-            <p class="price">{{ product.price }} $</p>
-            <p>Колір: {{ product.color }}</p>
-        </div>
-        {% endfor %}
 
+
+    <section class="client_section layout_padding-bottom">
+    <div class="container">
+      <div class="heading_container heading_center psudo_white_primary mb_45">
+        <h2>
+          What Says Our Customers
+        </h2>
+      </div>
+      <div class="carousel-wrap row ">
+        <div class="owl-carousel client_owl-carousel">
+          <div class="item">
+            <div class="box">
+              <div class="detail-box">
+                <p>
+                  Покупал тут Samsung Galaxy A07, очень доволен качеством работы с клиентами!
+                </p>
+                <h6>
+                  Mihael
+                </h6>
+                <p>
+                  Покупатель
+                </p>
+              </div>
+              <div class="img-box">
+                <img src="{% static 'images/client4.jpg' %}" alt="" class="box-img">
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="detail-box">
+                <p>
+                  Покупал тут телефоны не один раз, мне все очень понравилось, всем советую данный сайт
+                </p>
+                <h6>
+                  Artem
+                </h6>
+                <p>
+                  покупатель
+                </p>
+              </div>
+              <div class="img-box">
+                <img src="{% static 'images/client3.jpg' %}" alt="" class="box-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="js/custom.js"></script>
+
+
 
 {% endblock %}

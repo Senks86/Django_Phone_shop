@@ -1,0 +1,141 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ product.name }}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #222;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .product-wrapper {
+      background-color: #fff;
+      color: #000;
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .breadcrumb {
+      background-color: transparent;
+      font-size: 0.9rem;
+    }
+
+    .product-image {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .product-thumbnail {
+      width: 80px;
+      margin-top: 15px;
+      border-radius: 5px;
+      opacity: 0.7;
+    }
+
+    .product-thumbnail:hover {
+      opacity: 1;
+    }
+
+    .price-tag {
+      font-size: 1.8rem;
+      color: #e67e22;
+      font-weight: bold;
+    }
+
+    .btn-orange {
+      background-color: #ff6f00;
+      color: white;
+      font-weight: 500;
+    }
+
+    .btn-orange:hover {
+      background-color: #e65100;
+    }
+
+    .nav-tabs .nav-link.active {
+      background-color: #ffe0b2;
+      color: #000;
+      border: none;
+    }
+
+    .tab-content {
+      background: #fff3e0;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="header_section" style="background-color: #111;">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg custom_nav-container">
+      <a class="navbar-brand text-white" href="{% url 'home' %}">
+        <span style="color: white;">Phone shop</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'shop' %}">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#"></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  <div class="container product-wrapper">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+
+
+      </ol>
+    </nav>
+
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <img src="{% static 'images/about.jpg' %}" alt="" class="product-image">
+      </div>
+
+      <div class="col-md-6">
+
+        <h2 class="text-success fw-bold">About us</h2>
+
+        <h4 >Welcome to our phone store! We strive to offer our customers the latest and greatest smartphones. Our mission is to provide the best mobile deals to meet all your communication, business, and entertainment needs.
+At our store, we believe in offering high-quality products at competitive prices. Our team of experts will help you find the perfect phone that fits your lifestyle and budget. Customer satisfaction is our top priority, and we are here to provide exceptional service and support.
+Thank you for choosing us as your trusted phone store. We look forward to serving you and keeping you connected with the best technology available.</h4>
+
+          </div>
+        </div>
+      </div>
+
+
+  {% include "include/footer.html" %}
+
+</body>
+</html>
